@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<h4>Adivinhe o número que eu pensei.</h4>
+<h5>Chute um número!</h5>
+<input>
+<button>Comparar!</button>
+<script>
+
+    var numeroPensado = Math.round(Math.random()*10);
+    console.log(numeroPensado);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica(){
+
+        if(input.value == numeroPensado){
+            alert("Você ACERTOU!");
+        }
+        else{
+
+            alert("Você ERROU!");
+        }
+
+        input.value = "";
+        input.focus();
+
+    }
+
+    var button = document.querySelector("button")
+    button.onclick = verifica;
+
+</script>

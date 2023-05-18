@@ -1,0 +1,129 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    width: 100%;
+    background: #bbbbbb;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.caixa {
+    width: 100%;
+    margin-left: 100px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    position: relative;
+}
+
+.titulo-principal {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #000000;
+    
+}
+
+nav {
+    display: inline;
+    width: 100%;
+    align-items: center;
+    text-align: right;
+    position: relative;
+}
+
+nav ul {
+    display: inline;
+}
+
+nav li {
+    display: inline;
+    margin: 0px 20px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.5s color;
+}
+
+nav a:hover { /*Usado para fazer mudanças de estilo o mouse estiver pairando sobre o link*/
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+main {
+    padding: 50px 0;
+    align-items: center;
+}
+
+.produtos {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.produtos h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 350px;
+    height: 500px;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 15px 10px;
+    box-sizing: border-box;/*Faz com que a definição do espaçamento em pixels esteja dentro do espaçamento percentual e o percentual esteja fixo no que foi definido*/
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 10px;
+    transition: 1s all;
+}
+
+.produtos li:hover {
+    border-color: #c78c19;
+}
+
+.produtos li:hover h2 {
+    transform: scale(1.1);
+}
+
+.produtos li:active {
+    border-color: #088c19;
+}
+
+.produtos li img {
+    width: 90%;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+footer {
+    text-align: center;
+    background: url(./img/bg.jpg);
+    padding: 40px;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #ffffff;
+    margin: 20px 0 0;
+}

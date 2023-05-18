@@ -1,0 +1,241 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    width: 100%;
+    background: #bbbbbb;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.caixa {
+    width: 100%;
+    margin-left: 100px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    position: relative;
+
+}
+
+.titulo-primeiro {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #000000;
+
+}
+
+nav {
+    display: inline;
+    width: 100%;
+    align-items: center;
+    text-align: right;
+    position: relative;
+}
+
+nav ul {
+    display: inline;
+}
+
+nav li {
+    display: inline;
+    margin: 0px 20px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.5s color;
+}
+
+nav a:hover {
+    /*Usado para fazer mudanças de estilo o mouse estiver pairando sobre o link*/
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+.banner {
+    width: 100%;
+}
+
+.principal {
+    padding: 3em 0;
+    background: #fefefe;
+}
+
+.titulo-segundo {
+    padding: 2em 0 2em 0;
+    text-align: center;
+    align-items: center;
+    font-size: 2em;
+    color: rgb(0, 0, 0, 0.7);
+    font-weight: 900;
+    clear: left;
+    text-shadow: 1px 1px 1px rgb(66, 66, 66);
+}
+
+.imagem-utensilios {
+    width: 20%;
+    float: left;
+    margin: 0 20px 20px 0;
+    padding: 0 20px 0 60px;
+}
+
+.principal p {
+    margin: 2em;
+    padding: 0 2em 2em 0;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.principal strong {
+    font-weight: bolder;
+    color: rgb(0, 0, 0, 0.7);
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.mapa {
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(#fefefe, #a6a6a6);
+}
+
+.mapa-conteudo {
+    width: 100%;
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.beneficios {
+    padding: 3em 0;
+    width: 100%;
+    background: #a6a6a6;
+    align-content: center;
+}
+
+.conteudo-beneficios {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    justify-items: stretch;
+    
+}
+
+.lista-beneficios {
+    width: 40%;
+    margin: 0 auto 0 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.imagem-beneficios {
+    width: 60%;
+    display: flex;
+    flex-shrink: 1;
+    margin: 0 100px 0 auto;
+    opacity: 1;
+    transition: 500ms;
+    box-shadow: 5px 5px 5px 1px rgb(68, 68, 68);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+
+.imagem-beneficios:hover {
+    opacity: 0.8;
+}
+
+.itens {
+    line-height: 3;
+}
+
+.itens::before {
+    content: "✷";
+}
+
+.itens:first-child {
+    font-weight: bold;
+}
+
+
+
+.video {
+    text-align: center;
+    width: 100%;
+    margin: 10em auto 3em auto;
+    opacity: 0.7;
+}
+
+.video:hover {
+    opacity: 1;
+    transition: 500ms;
+
+}
+
+footer {
+    text-align: center;
+    background: url(./img/bg.jpg);
+    padding: 40px;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #ffffff;
+    margin: 20px 0 0;
+}
+
+@media screen and (max-width: 480px) {
+
+    .caixa,
+    .principal,
+    /* .conteudo-beneficios, */
+    .mapa,
+    .mapa-conteudo,
+    .video {
+        width: auto;
+    }
+
+    .conteudo-beneficios {
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        flex-direction: column;
+    }
+
+    .lista-beneficios,
+    .imagem-beneficios {
+        display: block;
+        width: 100%;
+    }
+
+}
+
+/*
+main > p { usado para selecionar os parágrafos filhos diretos da main
+    
+}
+
+img + p {  usado para seleionar próximo parágrafo, ou próximo irmão, depois de uma imagem
+
+}
+
+img ~ p { usado para selecionar todos os parágrafos depois de uma imagem
+
+}
+
+principal p:not(#mission) {
+
+}
+*/

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<canvas width="1500" height="710"></canvas>
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 1500, 710);
+
+    var x = 20;
+    var y = 20;
+    //códigos do teclado
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+    //taxa de incremento
+    var taxa = 5;
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, Math.PI * 2, true);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 1500, 710);
+    }
+
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(x, y, 10, 'red');
+
+    }
+
+    setInterval(atualizaTela, 10); //Quando queremos passar uma função como parâmetro para outra, precisamos omitir seus parênteses (), chamamos isso de callback em programação
+
+    function leiaTeclado(evento) {
+        if (evento.keyCode == direita) {
+            x += taxa;
+        }
+        else if (evento.keyCode == esquerda) {
+            x -= taxa;
+        }
+        else if (evento.keyCode == cima) {
+            y -= taxa;
+        }
+        else if (evento.keyCode == baixo) {
+            y += taxa;
+        }
+    }
+
+    document.onkeydown = leiaTeclado;
+
+</script>
+
+<body>
+
+</body>
+
+</html>

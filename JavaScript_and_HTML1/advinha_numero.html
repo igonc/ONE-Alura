@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var n = parseInt(prompt("Determine o intervalo de 0 a n."))
+    function sorteio(){
+        
+        return Math.round(Math.random()*n);
+        
+    }
+
+    numeroPensado = sorteio();
+    console.log(numeroPensado);
+    
+    var chutes = 1;
+
+    while(chutes <= 3){
+
+        var numeroChute = parseInt(prompt("Chute um número. Você em até no máximo 3 tentativas."));
+        
+        if(numeroChute == numeroPensado){
+            alert("Parabéns, você acertou! O número pensado é " + numeroPensado);
+            chutes = 3; //ou você pode usar o break aqui
+        }
+        else{
+
+            if(numeroChute < 0 || numeroChute > n){
+                alert("Você digitou um número fora do intervalo!");
+            }
+            else{
+
+                if(numeroChute > numeroPensado){
+                    alert("Você errou! O número pensado é menor que o seu chute.");
+                }
+
+                if(numeroChute < numeroPensado){
+                    alert("Você errou! O número pensado é maior que o seu chute.")
+                }
+
+            }
+
+            if(chutes == 3){
+                alert("Você esgotou o número máximo de 3 tentativas!")
+            }
+        }
+
+        chutes++;
+
+    }
+
+    mostra("FIM")
+
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<canvas width="900" height="600"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas'); //define o seletor de tela para canvas
+    var pincel = tela.getContext('2d'); //define o padrão 2D para o desenho do pincel
+
+    pincel.fillStyle = 'lightgrey'; //define a cor do pincel
+    pincel.fillRect(0, 0, 900, 600); //faz o pincel pintar a tela como um retângulo do tamanho do canvas
+
+    var cores = ['blue', 'red', 'green', 'yellow'] //cria um array de cores
+    var indiceCorAtual = 0; // cria uma variável para os indices do array de cores e faz com que comece com a cor blue
+    var desenha = false
+
+    tela.onmousemove = function (evento) {
+        if (desenha) {
+            var raio = 10; //define uma variável para o raio
+            var x = evento.pageX - tela.offsetLeft; //pega o valor da coordenada x
+            var y = evento.pageY - tela.offsetTop; //pega o valor da coordenada y
+
+            if (evento.shiftKey && evento.altKey) {
+
+                alert('Só aperte uma tecla por vez, por favor!');
+
+            } else if (evento.shiftKey && raio + 5 <= 50) {
+                raio = raio + 5;
+
+            } else if (evento.altKey && raio - 5 >= 1) {
+                raio = raio - 5;
+
+            }
+
+            pincel.fillStyle = cores[indiceCorAtual];
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * 3.14);
+            pincel.fill();
+
+        }
+
+        console.log(x + ',' + y);
+
+    }
+
+    tela.oncontextmenu = function () {
+        indiceCorAtual++; //muda de cor de acordo com o indice do array de cores
+        if (indiceCorAtual >= cores.length) {
+            indiceCorAtual = 0; // se o indice ultrapassar o tamanho do array entao volta para a primeira cor, azul
+        }
+        alert(cores[indiceCorAtual]); //indica qual foi a cor selecionada
+        return false; // para não exibir o menu padrão do canvas
+
+    }
+
+    tela.onmousedown = function () {
+        desenha = true;
+    }
+
+    tela.onmouseup = function () {
+        desenha = false;
+    }
+
+    tela.onmousemove = desenhaCirculo;
+    tela.oncontextmenu = mudaCor;
+    tela.onmousedown = habilitaDesenhar;
+    tela.onmouseup = desabilitaDesenhar;
+
+</script>
+
+<body>
+
+</body>
+
+</html>

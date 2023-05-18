@@ -1,0 +1,137 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    width: 100%;
+    background: #bbbbbb;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.caixa {
+    width: 100%;
+    margin-left: 100px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    position: relative;
+}
+
+.titulo-principal {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #000000;
+    
+}
+
+nav {
+    display: inline;
+    width: 100%;
+    align-items: center;
+    text-align: right;
+    position: relative;
+}
+
+nav ul {
+    display: inline;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 30px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.5s color;
+}
+
+nav a:hover { /*Usado para fazer mudanças de estilo o mouse estiver pairando sobre o link*/
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+main {
+    width: 940px;
+    margin: 0 auto;
+    padding: 5px 0;
+    align-items: center;
+}
+
+form {
+    margin: 40px 0;
+}
+
+form label, form legend {
+    display: block;
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+#mensagem {
+    height: 150px;
+}
+
+#btn-enviar {
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 0;
+    background: #ffaa00;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+#btn-enviar:hover {
+    background: darkorange;
+    transform: scale(1.1);
+}
+
+table {
+    margin: 140px 0 160px;
+}
+
+thead {
+    background: #555555;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td, th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+
+
+footer {
+    text-align: center;
+    background: url(./img/bg.jpg);
+    padding: 40px;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #ffffff;
+    margin: 20px 0 0;
+}

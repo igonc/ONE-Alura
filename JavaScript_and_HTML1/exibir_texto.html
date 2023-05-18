@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<h3>EXIBIR TEXTO</h3>
+<h5>Digite um texto a ser exibido: </h5>
+<input>
+<button>Exibir texto digitado</button>
+
+<script>
+
+    var input = document.querySelector("input");
+
+    function exibeTexto(){
+
+        alert(input.value);
+
+    }
+
+    var botao = document.querySelector("button");
+    botao.onclick = exibeTexto;
+
+</script>
